@@ -72,6 +72,7 @@
     <=  menor igual
     ==  igual de comparação
     === igual de comparação com tipo de dado
+    != diferente
 */
     if ($n1 % 2 == 0) {
         echo "$n1 é par";
@@ -95,7 +96,7 @@
     }
     ?>
     <p>
-        Operadores Lógicos (e = && /ou = ||)
+        Operadores Lógicos (e = && /ou = || / xou)
     </p>
 
     <?php
@@ -127,7 +128,7 @@
     <br>
     <?php
     $idade = 20;
-    $status = ($idade >= 18) ? "Maior de idade" : "Menor de idade"; // Retorna: Maior de idade
+    $status = ($idade >= 18) ? "Maior de idade<br>" : "Menor de idade<br>"; // Retorna: Maior de idade
     echo $status;
     $dia = 3;
     switch ($dia) {
@@ -154,6 +155,105 @@
             break;
         default:
             echo "numero invalido";
+    }
+    ?>
+    <br>
+    <?php
+    // Estruturas de repetição
+    // FOR - Repete um trecho de código uma determinada qtde de vezes
+    // for(valor inicial;valor final; passo){ codigo a se repetir }
+    for ($i = 0; $i < 10; $i++) {
+        echo $i . "<br>";
+    }
+    $n1 = 7;
+
+    for ($n2 = 1; $n2 <= 10; $n2++) {
+        if ($n2 < 10) {
+            echo $n1 . " x 0" . $n2 . " = " . $n1 * $n2 . "<br>";
+        } else {
+            echo $n1 . " x " . $n2 . " = " . $n1 * $n2 . "<br>";
+        }
+    }
+
+    for ($i = 0; $i <= 12; $i += 2) {
+        echo $i . "<br>";
+    }
+    for ($i = 0; $i <= 12; $i += 3) {
+        echo $i . "<br>";
+    }
+    for ($i = 0; $i <= 12; $i += 4) {
+        echo $i . "<br>";
+    }
+    for ($i = 0; $i <= 12; $i += 6) {
+        echo $i . "<br>";
+    }
+    for ($i = 12; $i >= 0; $i--) {
+        echo $i . "<br>";
+    }
+    // WHILE - while(condição){ codigo que vai se repetir }
+    echo "while<br>";
+    $n = rand(0, 500);
+    while ($n % 2 != 0) {
+        echo $n . "<br>";
+        $n = rand(0, 500);
+    }
+    echo $n . "<br>";
+
+    // DO WHILE - do{ codigo que vai se repetir }while(condição);
+    echo "do while<br>";
+    do {
+        $n = rand(0, 1200);
+        echo $n . "<br>";
+    } while ($n % 2 != 0);
+
+    // Array - Vetor $nome[indice]
+    //indice - posição do valor dentro de um conjunto
+    //indice - valor numerico que começa no 0
+    $v[0] = "a";
+    $v[1] = "b";
+    $v[2] = "c";
+    $v[3] = "d";
+    $v[4] = "e";
+
+    //   foreach ($array as $valor) { ... }
+
+    foreach ($v as $valor) {
+        echo $valor . "<br>";
+    }
+
+    //php trabalha com vetor chamado vetor dinamico e não tipado
+    //no php o indice do vetor não precisa ser numerico, nem sequencial
+    // e nem começar do 0
+
+    $vn[10] = 10;
+    $vn[5] = 5;
+    $vn[15] = 15;
+    $vn[7] = 7;
+    foreach ($vn as $valor) {
+        echo $valor . "<br>";
+    }
+    $vt['blue'] = "azul";
+    $vt['red'] = "vermelho";
+    $vt['green'] = "verde";
+    $vt['black'] = "preto";
+    $vt['white'] = "branco";
+
+    foreach ($vt as $valor) {
+        echo $valor . "<br>";
+    }
+
+    foreach ($vt as $x => $z) {
+        echo "Índice: $x - Valor: $z <br>";
+    }
+    $i = 0;
+    do {
+        $n = rand(0, 1200);
+        $vr[$i] = $n;
+        $i++;
+    } while ($n % 2 == 0);
+
+    foreach ($vr as $x => $z) {
+        echo "Índice: $x - Valor: $z <br>";
     }
     ?>
 </body>
