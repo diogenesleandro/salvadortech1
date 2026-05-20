@@ -43,12 +43,18 @@
             $arquivo = $_FILES['arquivo'];
             $caminho = $diretorio_destino . $arquivo['name'];
             // Move o arquivo da pasta temporária para o destino final
-            if (move_uploaded_file($arquivo['tmp_name'], $caminho)) {
-    ?>
-        <img src="<?php echo $caminho; ?>" alt="">
-<?php
+            if ($arquivo["type"] != "image/jpeg") {
+                echo "tipo não suportado";
+            } else if ($arquivo["size"] > 70000) {
+                echo "arquivo grande demais";
             } else {
-                echo "Erro ao enviar o arquivo.";
+                if (move_uploaded_file($arquivo['tmp_name'], $caminho)) {
+    ?>
+            <img src="<?php echo $caminho; ?>" alt="">
+<?php
+                } else {
+                    echo "Erro ao enviar o arquivo.";
+                }
             }
         } else {
             header('location:aula03.php');
