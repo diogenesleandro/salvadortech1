@@ -1,0 +1,72 @@
+
+$x = 10;
+$nome = "Diógenes";
+BuildContext $context;
+$context = new Context();
+
+//metodo
+
+
+método construtor - Instancia um objeto de uma classe
+método get - Disponibiliza o valor de um atributo
+método set - Altera o valor de um atributo
+todo atributo é privado e quase todo método é publico.
+visibilidade - 
+publico
+privado
+protegido
+Assinatura de atributo
+private         String          titular;
+visibilidade    tipo de dado    nome
+Assinatura do método
+public          boolean     depositar   (double valor)  {}
+visibilidade    retorno     nome        (parametro)     {corpo do método}    
+parametro - valores pra iniciar o método
+retorno - valor disponivel no fim da transação (void não retorna nada)
+todo método get tem retorno e não tem parametro
+todo método set tem parametro e não tem retorno
+método construtor com parametro
+
+  public ContaBancaria(String titular, double saldoInicial, String numeroConta) {
+        this.titular = titular;
+        this.saldo = saldoInicial;
+        this.numeroConta = numeroConta;
+    }
+
+método construtor sem parametro
+
+  public ContaBancaria() {
+        this.titular = null;
+        this.saldo = null;
+        this.numeroConta = null;
+    }
+
+    sobrecarga de métodos - é quando dois métodos tem o mesmo nome e 
+    recebem parametros diferentes
+
+    public int somar(int n1){
+        this.setResultado(this.getResultado()+n1);
+    }
+    public int somar(int n1, int n2){
+        this.setResultado(n1+n2);
+    }
+
+    HERANÇA
+
+    class MeuPrimeiroApp extends StatelessWidget 
+
+    Class Professor extends Pessoa
+    Class Pessoa extends Primata
+    Class Primata extends Mamifero
+    Class Poupanca extends ContaBancaria
+    Class ContaCorrente extends ContaBancaria
+
+    Sobreescrita de método
+
+    Quando dois metodos tem o mesmo nome, mesmo parametro e faz coisas diferentes.
+
+    Isso acontece quando eu tenho herança ou seja o depositar(saldo) de
+    ContaCorrente pode ser diferente do depositar(saldo) de ContaPoupança
+
+    Polimorfismo - quando uma classe pode ser identificado como a filha e como a mãe
+    ContaBancaria Contas[] = 
