@@ -1,0 +1,19 @@
+create database db_loja; 
+
+/*use db_loja;*/
+
+create table tb_cliente 
+(
+    /* nome tipo_de_dado regra */
+	cd_cliente int primary key auto_increment, /* 00.000*/
+    nm_cliente varchar(200) not null,
+    ds_telefone varchar(15) not null,
+   ds_email varchar(200)
+);
+
+/* 
+DDL - LINGUAGEM DE DEFINIÇÕES DE DADOS (CREATE, ALTER E DROP)
+DML - LINGUAGEM DE MANIPULAÇÃO DE DADOS (INSERT, UPDATE E DELETE)
+DQL - LINGUAGEM DE CONSULTA DE DADOS (SELECT)
+DCL - LINGUAGEM DE CONTROLE DE DADOS (GRANT E REVOKE)
+*/
