@@ -17,7 +17,11 @@ if (count($resultados) > 0) {
                 " - Nome: " . $linha["nm_cliente"] .
                 " - Telefone: " . $linha["ds_telefone"] .
                 " - Email: " . $linha["ds_email"] .
-                "</li>";
+                " - <form action='delete_pdo.php' method='POST' onsubmit='return confirm('Tem certeza que deseja excluir este registro?');' style='display:inline;'>
+                            <input type='hidden' name='cd_cliente' value=" . $linha['cd_cliente'] . ">
+                            <button type='submit' class='btn-excluir'>Excluir</button>
+                    </form>
+                </li>";
         }
         ?>
     </ul>
@@ -34,7 +38,15 @@ if (count($resultados) > 0) {
         <?php
         while ($linha = $stmt->fetch(PDO::FETCH_OBJ)) {
 
-            echo "<li> ID: $linha->cd_cliente - Nome: $linha->nm_cliente - Telefone: $linha->ds_telefone - Email: $linha->ds_email </li>";
+            echo "<li> ID: $linha->cd_cliente - 
+            Nome: $linha->nm_cliente - 
+            Telefone: $linha->ds_telefone - 
+            Email: $linha->ds_email 
+            <form action='delete_pdo.php' method='POST' onsubmit='return confirm('Tem certeza que deseja excluir este registro?');' style='display:inline;'>
+                            <input type='hidden' name='cd_cliente' value=  $linha->cd_cliente >
+                            <button type='submit' class='btn-excluir'>Excluir</button>
+                    </form>
+                    </li>";
         }
         ?>
     </ol>

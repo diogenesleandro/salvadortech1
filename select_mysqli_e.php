@@ -19,6 +19,7 @@ if (mysqli_num_rows($resultado) > 0) {
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Telefone</th>
+                <th>Excluir</th>
             </tr>
         </thead>
         <tbody>
@@ -30,6 +31,14 @@ if (mysqli_num_rows($resultado) > 0) {
                     . "<td> " . $linha["nm_cliente"] . "</td>"
                     . "<td> " . $linha["ds_telefone"] . "</td>"
                     . "<td> " . $linha["ds_email"] . "</td>"
+                    . "<td> 
+
+                    <form action='delete_mysqli_e.php' method='POST' onsubmit='return confirm('Tem certeza que deseja excluir este registro?');' style='display:inline;'>
+                            <input type='hidden' name='cd_cliente' value=" . $linha['cd_cliente'] . ">
+                            <button type='submit' class='btn-excluir'>Excluir</button>
+                    </form>
+
+                    </td>"
                     . "</tr>";
             }
 
@@ -65,6 +74,14 @@ if (mysqli_num_rows($resultado) > 0) {
                     <td>  $linha->nm_cliente     </td>
                     <td>  $linha->ds_telefone    </td>
                     <td>  $linha->ds_email       </td>
+                    <td> 
+
+                    <form action='delete_mysqli_e.php' method='POST' onsubmit='return confirm('Tem certeza que deseja excluir este registro?');' style='display:inline;'>
+                            <input type='hidden' name='cd_cliente' value=  $linha->cd_cliente >
+                            <button type='submit' class='btn-excluir'>Excluir</button>
+                    </form>
+
+                    </td>
                     </tr>";
             }
             ?>

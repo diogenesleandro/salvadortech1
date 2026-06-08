@@ -32,6 +32,14 @@ if ($resultado->num_rows > 0) { //oo
                     . "<td> " . $linha["nm_cliente"] . "</td>"
                     . "<td> " . $linha["ds_telefone"] . "</td>"
                     . "<td> " . $linha["ds_email"] . "</td>"
+                    . "<td> 
+
+                    <form action='delete_mysqli_oo.php' method='POST' onsubmit='return confirm('Tem certeza que deseja excluir este registro?');' style='display:inline;'>
+                            <input type='hidden' name='cd_cliente' value=" . $linha['cd_cliente'] . ">
+                            <button type='submit' class='btn-excluir'>Excluir</button>
+                    </form>
+
+                    </td>"
                     . "</tr>";
             }
 
@@ -69,6 +77,14 @@ if ($resultado->num_rows > 0) { //oo
                     <td>  $linha->nm_cliente     </td>
                     <td>  $linha->ds_telefone    </td>
                     <td>  $linha->ds_email       </td>
+                    <td> 
+
+                    <form action='delete_mysqli_oo.php' method='POST' onsubmit='return confirm('Tem certeza que deseja excluir este registro?');' style='display:inline;'>
+                            <input type='hidden' name='cd_cliente' value=  $linha->cd_cliente >
+                            <button type='submit' class='btn-excluir'>Excluir</button>
+                    </form>
+
+                    </td>
                     </tr>";
             }
             ?>
